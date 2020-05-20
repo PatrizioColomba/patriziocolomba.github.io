@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/patriziocolomba",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "patriziocolomba"
+    }
+  },
+  "defaultProject": "patriziocolomba",
+  "cli": {
+    "analytics": "91ea98a1-7acb-446f-8cc2-01631b9d66c4"
+  }
 }

@@ -1,3 +1,27 @@
-<div>
-    Il mio portfolio digitale sarà presto online!
+<div> 
+    <h2>Portfolio Digitale</h2>
+    <p>Il codice sviluppato e reso disponibile su Github</p>
+  
+    <input type="hidden" #selection>
+  
+    <div class="card-container">
+      <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+        <span>calendar</span>
+      </div>
+  
+      <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+        <span>strvect</span>
+      </div>
+    </div>
+  
+    <div class="terminal" [ngSwitch]="selection.value">
+        <div *ngSwitchDefault>
+            <div>Calendario componibile sviluppato con AngularJS</div>
+            <div>Link al repository: <a href="https://github.com/PatrizioColomba/calendar">https://github.com/PatrizioColomba/calendar</a></div>
+        </div>
+        <div *ngSwitchCase="'material'">
+            <div>Algoritmo per la lettura e scrittura di un array di stringhe in linugaggio C</div>
+            <div>Link al repository: <a href="https://github.com/PatrizioColomba/strvect">https://github.com/PatrizioColomba/strvect</a></div>
+        </div>
+    </div>
 </div>

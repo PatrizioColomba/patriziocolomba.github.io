@@ -45,7 +45,7 @@
 
   .toolbar #social-logo {
     height: 40px;
-    margin: -20px 20px 0 0;
+    margin: 0 20px;
   }
 
   .toolbar #social-logo:hover {
@@ -162,9 +162,9 @@
   .terminal {
     position: relative;
     width: 80%;
-    max-width: 600px;
     border-radius: 6px;
     padding-top: 45px;
+    margin: 0 auto;
     margin-top: 8px;
     overflow: hidden;
     background-color: rgb(15, 15, 16);
@@ -185,7 +185,7 @@
     text-indent: 4px;
   }
 
-  .terminal pre {
+  .terminal div {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     color: white;
     padding: 0 1rem 1rem;

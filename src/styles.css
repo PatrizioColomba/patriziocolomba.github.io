@@ -186,10 +186,31 @@
   }
 
   .terminal div {
+    padding: 0;
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
+  }
+
+  .terminal a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .terminal a:hover {
+    color:  rgb(105, 103, 103);
+  }
+
+  .terminal div.repository, 
+  .terminal a,
+  .terminal img {
+    float: right;
+    margin: 0;
+    padding: 0;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 10px;
   }
 
   .circle-link {

@@ -5,7 +5,8 @@ import { AngularComponent } from './angular/angular.component';
 
 
 const routes: Routes = [
-  { path: '', component: PortfolioComponent },
+  { path: 'portfolio', component: PortfolioComponent },
+  { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
   { path: 'angular', component: AngularComponent }
 ];
 

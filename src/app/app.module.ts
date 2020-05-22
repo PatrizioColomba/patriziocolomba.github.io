@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AngularComponent } from './angular/angular.component';
+import { PostComponent } from './post/post.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PortfolioComponent,
-    AngularComponent
+    AngularComponent,
+    PostComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

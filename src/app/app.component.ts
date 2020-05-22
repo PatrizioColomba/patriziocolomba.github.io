@@ -7,7 +7,12 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
 
-  onResize(evt: Event) {
-    console.log(evt);
+  test: Boolean = true;
+
+  ngOnInit(): void {
+    this.onResize();
+  }
+
+  onResize() {
   }
 }

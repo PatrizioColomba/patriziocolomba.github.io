@@ -82,6 +82,10 @@ div#title a.name {
     font-weight: 600;
   }
 
+  a > img {
+    height: 40px;
+  }
+
   a.social {
     flex-grow: 1; 
     text-align: right;

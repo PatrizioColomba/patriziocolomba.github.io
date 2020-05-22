@@ -5,7 +5,6 @@
 
 div#title {
   display: inline-block;
-  min-width: 280px; 
   height: 60px;
 }
 
@@ -86,7 +85,7 @@ div#title a.name {
     height: 40px;
   }
 
-  a.social {
+  div.social {
     flex-grow: 1; 
     text-align: right;
   }

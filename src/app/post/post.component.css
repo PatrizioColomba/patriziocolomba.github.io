@@ -14,3 +14,7 @@ div.post h3 {
 div.post div.date {
     float: right;
 }
+
+div.post div.text {
+    white-space: pre-wrap;
+}

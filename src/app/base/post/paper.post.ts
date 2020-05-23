@@ -1,5 +1,5 @@
 import { Post } from './post';
-import { PaperSource } from '../source/paper.source';
+import { formatDate } from '@angular/common';
 
 export class Paper implements Post {
     private _title: string;
@@ -21,5 +21,9 @@ export class Paper implements Post {
 
     public created(): Date {
         return this._created;
+    }
+
+    public createdStr(locale: string): string {
+        return formatDate(this._created, 'dd/MM/yyyy', 'en-US');
     }
 }

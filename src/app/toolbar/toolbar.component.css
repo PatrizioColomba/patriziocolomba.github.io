@@ -89,6 +89,8 @@ div#title a.name {
   div.social {
     flex-grow: 1; 
     text-align: right;
+    float: right;
+    margin-left: -20px;
   }
 
   [hidden] {

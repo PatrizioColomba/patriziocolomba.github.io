@@ -2,9 +2,9 @@
 <ul class="news">
     <li *ngFor="let post of this.getPosts()">
         <div class="post">
-            <div class="date">{{post.created()}}</div>
+            <div class="date">{{post.createdStr()}}</div>
             <h3>{{post.title()}}</h3>
-            <div>
+            <div class="text">
                 {{post.text()}}
             </div>
         </div>

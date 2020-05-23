@@ -4,10 +4,12 @@ import { PaperSource } from '../source/paper.source';
 export class Paper implements Post {
     private _title: string;
     private _text: string;
+    private _created: Date;
 
-    public constructor(title: string, text: string) {
+    public constructor(title: string, text: string, created: Date) {
         this._title = title;
         this._text = text;
+        this._created = created;
     }
 
     public title(): string {
@@ -17,7 +19,7 @@ export class Paper implements Post {
         return this._text;
     }
 
-    read(source: PaperSource): Post {
-        return new Paper(source.title(), source.text());
+    public created(): Date {
+        return this._created;
     }
 }

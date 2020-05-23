@@ -1,0 +1,16 @@
+ul.news {
+    margin: 15px 0;
+}
+
+div.post {
+    border-top: 1px solid #000000;
+    margin-bottom: 15px;
+}
+
+div.post h3 {
+    font-weight: 600;
+}
+
+div.post div.date {
+    float: right;
+}

@@ -25,6 +25,7 @@ export class PostComponent implements OnInit {
     this._postService.getPosts().subscribe((data: Paper[]) => {
       data.forEach(element => {
         this._posts.push(new Paper(element.id, element.title, element.text, new Date(element.created)));
+        this._posts.reverse();
       });
     });
   }

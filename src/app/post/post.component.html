@@ -4,7 +4,7 @@
         <div class="post">
             <div class="date">{{post.getCreatedStr('en-US')}}</div>
             <h3>{{post.title}}</h3>
-            <div class="text">
+            <div class="text" [innerHTML]="post.text">
                 {{post.text}}
             </div>
         </div>

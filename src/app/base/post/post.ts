@@ -1,7 +1,9 @@
 import { Source } from '../source/source';
 
 export interface Post {
-    title(): string;
-    text(): string;
-    created(): Date;
+    getId(): number;
+    getTitle(): string;
+    getText(): string;
+    getCreated(): Date;
+    getCreatedStr(locale: string): string;
 }

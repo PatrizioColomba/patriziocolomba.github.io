@@ -1,11 +1,11 @@
 <h2>News</h2>
 <ul class="news">
-    <li *ngFor="let post of this.getPosts()">
+    <li *ngFor="let post of _posts">
         <div class="post">
-            <div class="date">{{post.createdStr()}}</div>
-            <h3>{{post.title()}}</h3>
+            <div class="date">{{post.getCreatedStr('en-US')}}</div>
+            <h3>{{post.title}}</h3>
             <div class="text">
-                {{post.text()}}
+                {{post.text}}
             </div>
         </div>
   </li>

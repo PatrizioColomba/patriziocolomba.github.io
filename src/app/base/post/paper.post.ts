@@ -2,28 +2,34 @@ import { Post } from './post';
 import { formatDate } from '@angular/common';
 
 export class Paper implements Post {
-    private _title: string;
-    private _text: string;
-    private _created: Date;
+    public id: number;
+    public title: string;
+    public text: string;
+    public created: Date;
 
-    public constructor(title: string, text: string, created: Date) {
-        this._title = title;
-        this._text = text;
-        this._created = created;
+    public constructor(id: number, title: string, text: string, created: Date) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.created = created;
     }
 
-    public title(): string {
-        return this._title;
-    }
-    public text(): string {
-        return this._text;
+    public getId(): number {
+        return this.id;
     }
 
-    public created(): Date {
-        return this._created;
+    public getTitle(): string {
+        return this.title;
+    }
+    public getText(): string {
+        return this.text;
     }
 
-    public createdStr(locale: string): string {
-        return formatDate(this._created, 'dd/MM/yyyy', 'en-US');
+    public getCreated(): Date {
+        return this.created;
+    }
+
+    public getCreatedStr(locale: string): string {
+        return formatDate(this.created, 'dd/MM/yyyy', locale);
     }
 }

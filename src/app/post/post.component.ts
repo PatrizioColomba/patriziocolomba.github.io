@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../post.service'
 import { Post } from '../base/post/post';
+import { HttpClientPostService } from '../http-client-post.service';
+import { PAPERS } from '../base/post/paper.post.mock';
+import { Paper } from '../base/post/paper.post';
 
 @Component({
   selector: 'app-post',
@@ -9,17 +11,22 @@ import { Post } from '../base/post/post';
 })
 export class PostComponent implements OnInit {
 
-  private _posts: Post[];
+  public _posts: Paper[];
 
-  constructor(private _postService: PostService) { }
+  constructor(private _postService: HttpClientPostService) {
+    this._posts = [];
+  }
 
   ngOnInit(): void {
     this.getPosts();
   }
 
-  public getPosts(): Post[] {
-    this._posts =  this._postService.getPosts();
-    return this._posts;
+  public getPosts(): void {
+    this._postService.getPosts().subscribe((data: Paper[]) => {
+      data.forEach(element => {
+        this._posts.push(new Paper(element.id, element.title, element.text, new Date(element.created)));
+      });
+    });
   }
 
 }

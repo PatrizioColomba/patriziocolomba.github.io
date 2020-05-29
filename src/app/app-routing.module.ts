@@ -8,7 +8,7 @@ import { PostComponent } from './post/post.component';
 const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
-  { path: 'post', component: PostComponent },
+  { path: 'posts', component: PostComponent },
   { path: 'angular', component: AngularComponent }
 ];
 

@@ -1,16 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Post } from './base/post/post';
-import { PAPERS } from './base/post/paper.post.mock';
+import { Observable} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class PostService {
+export abstract class PostService {
+  public postUrl: string = 'api/posts';
 
-  constructor() { }
-
-  public getPosts(): Post[] {
-    return PAPERS;
-  }
-
+  abstract getPosts();
 }

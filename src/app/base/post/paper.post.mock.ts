@@ -17,5 +17,14 @@ export const PAPERS = [
         "servizio REST reale.\n" + 
         "Le chiamate al servizio REST al momento sono simulate.\n",
         created: '2020/05/29'
+    },
+    {
+        id: 3,
+        title: "Repository REST API Service",
+        text: "Creato e pubblicato lo scheletro del servizio REST per questo sito. Seguirà la pubblicazione della pipeline per praticare l'integrazione continua (CI).\n"  + 
+        "Il repository è pubblicato su <a target=\"_blank\" href=\"https://bitbucket.org/\">Bitbucket</a>. " + 
+        "Nella pagina <a href=\"https://patriziocolomba.github.io/portfolio/\">portfolio</a> l'indirizzo " + 
+        "del <a target=\"_blank\" href=\"https://bitbucket.org/PatrizioColomba/rest.service/\">repository.\n",
+        created: '2020/05/30'
     }
   ];

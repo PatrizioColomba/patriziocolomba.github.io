@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "patriziocolomba-github": {
+      "hosting": {
+        "patriziocolomba": [
+          "patriziocolomba-github"
+        ]
+      }
+    }
+  }
+}

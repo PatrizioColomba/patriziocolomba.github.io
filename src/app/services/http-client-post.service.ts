@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { PostService } from './post.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { Paper } from './base/post/paper.post';
-import { catchError, map, tap } from 'rxjs/operators';
+import { Paper } from '../base/post/paper.post';
 
 @Injectable({
   providedIn: 'root'

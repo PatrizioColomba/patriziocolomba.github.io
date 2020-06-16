@@ -25,8 +25,7 @@
               "src/sitemap.xml",
               "src/robots.txt"
             ],
-            "styles": [
-            ],
+            "styles": [],
             "scripts": []
           },
           "configurations": {
@@ -120,6 +119,10 @@
               "devServerTarget": "patriziocolomba:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

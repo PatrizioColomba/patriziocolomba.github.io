@@ -47,3 +47,6 @@ Thumbs.db
 
 # htaccess File
 .htaccess
+
+#firebase.environment
+src/environments/firebase.environment.ts

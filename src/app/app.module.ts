@@ -28,7 +28,7 @@ import { FirePost } from './services/fire-post.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.fireBase, 'patriziocolomba.github.io'),
+    AngularFireModule.initializeApp(environment.firebase, 'patriziocolomba'),
     AngularFireDatabaseModule,
     environment.production ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}) : []
   ],

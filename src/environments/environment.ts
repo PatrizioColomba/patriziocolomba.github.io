@@ -1,5 +1,5 @@
-import {firebase} from './firebase.environment';
 import {name, version} from '../../package.json';
+import {firebase} from './firebase.environment'
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -7,7 +7,7 @@ import {name, version} from '../../package.json';
 
 export const environment = {
   production: false,
-  firebase,
+  ...firebase,
   name,
   version
 };

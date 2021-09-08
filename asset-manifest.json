@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.js": "/patriziocolomba.github.io/static/js/main.7302a892.chunk.js",
-    "main.js.map": "/patriziocolomba.github.io/static/js/main.7302a892.chunk.js.map",
+    "main.css": "/patriziocolomba.github.io/static/css/main.0a3bf75e.chunk.css",
+    "main.js": "/patriziocolomba.github.io/static/js/main.1fedbf4d.chunk.js",
+    "main.js.map": "/patriziocolomba.github.io/static/js/main.1fedbf4d.chunk.js.map",
     "runtime-main.js": "/patriziocolomba.github.io/static/js/runtime-main.30e28d88.js",
     "runtime-main.js.map": "/patriziocolomba.github.io/static/js/runtime-main.30e28d88.js.map",
-    "static/js/2.baf34fc6.chunk.js": "/patriziocolomba.github.io/static/js/2.baf34fc6.chunk.js",
-    "static/js/2.baf34fc6.chunk.js.map": "/patriziocolomba.github.io/static/js/2.baf34fc6.chunk.js.map",
+    "static/js/2.d2d59e31.chunk.js": "/patriziocolomba.github.io/static/js/2.d2d59e31.chunk.js",
+    "static/js/2.d2d59e31.chunk.js.map": "/patriziocolomba.github.io/static/js/2.d2d59e31.chunk.js.map",
     "index.html": "/patriziocolomba.github.io/index.html",
-    "static/js/2.baf34fc6.chunk.js.LICENSE.txt": "/patriziocolomba.github.io/static/js/2.baf34fc6.chunk.js.LICENSE.txt"
+    "static/css/main.0a3bf75e.chunk.css.map": "/patriziocolomba.github.io/static/css/main.0a3bf75e.chunk.css.map",
+    "static/js/2.d2d59e31.chunk.js.LICENSE.txt": "/patriziocolomba.github.io/static/js/2.d2d59e31.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.30e28d88.js",
-    "static/js/2.baf34fc6.chunk.js",
-    "static/js/main.7302a892.chunk.js"
+    "static/js/2.d2d59e31.chunk.js",
+    "static/css/main.0a3bf75e.chunk.css",
+    "static/js/main.1fedbf4d.chunk.js"
   ]
 }

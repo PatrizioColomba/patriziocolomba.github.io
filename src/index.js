@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Box from './box'
 import MenuAppBar from './appbar'
+import './main.css'
+import './card.css'
 
 document.querySelectorAll('.card')
     .forEach(domContainer => {

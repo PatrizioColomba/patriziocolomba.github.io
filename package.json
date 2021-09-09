@@ -4,7 +4,7 @@
   "license": "ISC",
   "author": "Patrizio Colomba <patrizio.colomba@gmail.com>",
   "description": "Personal Github Pages website",
-  "homepage": "https://patriziocolomba.github.io/patriziocolomba.github.io/",
+  "homepage": "https://patriziocolomba.github.io/",
   "______________comment______________": "The lines below needs to be reviewed",
   "keywords": [
     "Patrizio Colomba"
@@ -13,6 +13,8 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material/top-app-bar": "^12.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

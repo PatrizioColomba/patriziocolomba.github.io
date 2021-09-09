@@ -12,11 +12,11 @@ class Box extends React.Component {
                 <div className="line"></div>
                 <div>{this.props.section}</div>
                 <div className="line"></div>
-                <Button variant="contained" color="primary" disabled="true">
+                <Button variant="contained" color="primary" disabled>
                     Posts
                 </Button>
                 <div className="line"></div>
-                <Button variant="contained" color="primary" disabled="true">
+                <Button variant="contained" color="primary" disabled>
                     Repositories
                 </Button>
             </div>

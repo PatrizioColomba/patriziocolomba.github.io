@@ -1,24 +1,12 @@
-'use strict';
-
-import { Button } from "@material-ui/core";
-
-const e = React.createElement;
+import './box.css'
 
 class Box extends React.Component {
     render() {
         return (
-            <div className="content">
+            <div className="card content">
                 <img src={this.props.logo}></img>
                 <div className="line"></div>
                 <div>{this.props.section}</div>
-                <div className="line"></div>
-                <Button variant="contained" color="primary" disabled>
-                    Posts
-                </Button>
-                <div className="line"></div>
-                <Button variant="contained" color="primary" disabled>
-                    Repositories
-                </Button>
             </div>
         );
     }

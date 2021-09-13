@@ -1,0 +1,10 @@
+div.dashboard {
+    width: 100%;
+    text-align: center;
+    margin: 8px auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    overflow: hidden;
+    vertical-align: middle;
+}

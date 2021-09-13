@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Box from './box'
 import MenuAppBar from './appbar'
-import './main.css'
-import './card.css'
+import Dashboard from './dashboard';
+import './main.css';
+import './vars.css';
 
-document.querySelectorAll('.card')
+ReactDOM.render(<MenuAppBar />, document.querySelector('#appbar'));
+document.querySelectorAll('.dashboard')
     .forEach(domContainer => {
-        const section = domContainer.dataset.section;
-        const logo = domContainer.dataset.logo;
-        ReactDOM.render(
-            React.createElement(Box, {section: section, logo: logo}), 
-            domContainer) 
+        ReactDOM.render(<Dashboard />, domContainer);
     });
-
-ReactDOM.render(<MenuAppBar />, document.querySelector('#root'));

@@ -1,7 +1,6 @@
-import React from "react";
-import Box from './box';
+import React from 'react';
+import Box from '../box/Box';
 import './dashboard.css'
-
 
 class Dashboard extends React.Component {
     render() {

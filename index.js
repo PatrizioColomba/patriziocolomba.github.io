@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Box from './box';
-import MenuAppBar from './appbar';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-document.querySelectorAll('.card').forEach(function (domContainer) {
-    var section = domContainer.dataset.section;
-    var logo = domContainer.dataset.logo;
-    ReactDOM.render(React.createElement(Box, { section: section, logo: logo }), domContainer);
-});
+ReactDOM.render(React.createElement(
+  React.StrictMode,
+  null,
+  React.createElement(App, null)
+), document.getElementById('root'));
 
-ReactDOM.render(React.createElement(MenuAppBar, null), document.querySelector('#root'));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

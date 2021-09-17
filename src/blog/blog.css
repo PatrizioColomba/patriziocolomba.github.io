@@ -6,11 +6,11 @@ section.post {
     min-height: 700px;
     background-color: white;
     letter-spacing: 2px;
+    padding: 16px;
 }
 
 section.post header {
     font-size: 36px;
-    margin-bottom: 16px;
 }
 
 section.post section, section.post header {

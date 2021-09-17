@@ -8,7 +8,7 @@ function App() {
     <section>
       <TopBar />
       <Dashboard />
-      <Blog />
+      <Blog src="post.md"/>
     </section>
   );
 }

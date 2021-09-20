@@ -8,3 +8,10 @@ div.dashboard {
     overflow: hidden;
     vertical-align: middle;
 }
+
+div.dashboard a, 
+div.dashboard a:hover, 
+div.dashboard a:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}

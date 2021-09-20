@@ -7,11 +7,13 @@ import './blog.css'
 export default class Blog extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {markdown: ""};
+        this.state = {markdown: "", section: this.props.section};
     }
 
     componentDidMount() {
-        fetch(this.props.src).then(response => {
+        let url = "posts/"+this.state.section+"/post.md"
+        console.log(url);
+        fetch(url).then(response => {
             return response.text();
         }).then(text => {
             this.setState({markdown: text});

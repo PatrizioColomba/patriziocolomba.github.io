@@ -1,7 +1,7 @@
 import './App.css';
 import Blog from './blog/Blog';
 import Dashboard from './dashboard/Dashboard';
-import { Route, Switch, HashRouter } from 'react-router-dom'
+import { Redirect, Route, Switch, HashRouter } from 'react-router-dom'
 import TopBar from './topbar/TopBar';
 import React from 'react';
 
@@ -13,20 +13,20 @@ function App() {
           <TopBar />
           <Dashboard />
           <Switch>
-            <Route exact path="/">
-              <Blog src="posts/post.md"/>
+            <Route key="home" exact path="/">
+              <Redirect to="/kotlin" />
             </Route>
-            <Route exact path="/kotlin">
-              <Blog src="posts/post.md"/>
+            <Route key="kotlin" exact path="/kotlin">
+              <Blog section="kotlin"/>
             </Route>
-            <Route exact path="/react">
-              <Blog src="posts/post.md"/>
+            <Route key="react" exact path="/react">
+              <Blog section="react"/>
             </Route>
-            <Route exact path="/laravel">
-              <Blog src="posts/post.md"/>
+            <Route key="laravel" exact path="/laravel">
+              <Blog section="laravel"/>
             </Route>
-            <Route exact path="/spring">
-              <Blog src="posts/post.md"/>
+            <Route key="spring" exact path="/spring">
+              <Blog section="spring"/>
             </Route>
           </Switch>
         </section>

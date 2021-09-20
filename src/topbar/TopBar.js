@@ -31,7 +31,7 @@ export default function TopBar() {
           <Typography variant="h6" className={classes.title}>
             Tech Stack
           </Typography>
-          <Button color="inherit">GitHub Page</Button>
+          <Button href="https://github.com/PatrizioColomba" color="inherit">Repository</Button>
         </Toolbar>
       </AppBar>
     </div>

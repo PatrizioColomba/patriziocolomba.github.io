@@ -29,6 +29,9 @@
     "react-syntax-highlighter": "^15.4.4",
     "web-vitals": "^1.0.1"
   },
+  "devDependencies": {
+    "url-parse": "1.5.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",

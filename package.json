@@ -1,41 +1,23 @@
 {
   "name": "patriziocolomba.github.io",
   "version": "0.1.0",
-  "license": "ISC",
-  "author": "Patrizio Colomba <patrizio.colomba@gmail.com>",
-  "description": "Personal Github Pages website",
-  "homepage": "https://patriziocolomba.github.io/",
-  "______________comment______________": "The lines below needs to be reviewed",
-  "keywords": [
-    "Patrizio Colomba"
-  ],
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material/top-app-bar": "^12.0.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "gh-pages": "^3.2.3",
-    "install": "^0.13.0",
-    "npm": "^7.24.0",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.25",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.6.3",
     "react-dom": "^17.0.2",
-    "react-markdown": "^7.0.1",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "^4.0.3",
-    "react-syntax-highlighter": "^15.4.4",
-    "web-vitals": "^1.0.1"
-  },
-  "devDependencies": {
-    "url-parse": "1.5.3"
+    "react-scripts": "5.0.0",
+    "typescript": "^4.5.5",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -30,7 +30,7 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "url-parse": "1.5.3"
+    "url-parse": "1.5.9"
   },
   "scripts": {
     "start": "react-scripts start",

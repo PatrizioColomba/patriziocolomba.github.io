@@ -4,7 +4,7 @@ import Dashboard from "components/Dashboard/Dashboard";
 import Snippets from "components/Snippets/Snippets";
 import Stack from "components/Stack/Stack";
 import TopNavigation from "components/TopNavigation/TopNavigation";
-import { Outlet, ReactLocation, Router } from "react-location";
+import { createHashHistory, Outlet, ReactLocation, Router } from "react-location";
 export enum Firebase {
   Stacks = "https://patriziocolomba-c5ef8.firebaseio.com/stacks.json",
   Posts = "https://patriziocolomba-c5ef8.firebaseio.com/posts.json",
@@ -23,7 +23,10 @@ export const routes: AppRoute[] = [
   { itemId: "snippets", title: "Code Snippets", path: "/snippets", element: <Snippets /> },
 ];
 
-const location = new ReactLocation();
+const location = new ReactLocation({
+  history: createHashHistory(),
+});
+
 export default function App() {
   return (
     <Router location={location} routes={routes}>

@@ -17,9 +17,9 @@ export default function Snippets() {
   return (
     <div data-testid="Snippets">
       {snippets.map((s, i) => (
-        <Block padding={"2em"}>
+        <Block padding={"2em"} key={`snippet-${i}`}>
           <h2>Code Snippet in {s.lang}</h2>
-          <CodeSnippet key={`snippet-${i}`} text={s.text} lang={s.lang} />
+          <CodeSnippet text={s.text} lang={s.lang} />
         </Block>
       ))}
     </div>

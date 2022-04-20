@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Block } from "baseui/block";
+import { AppProvider } from "components/AppContext";
+import Dashboard from "components/Dashboard/Dashboard";
+import Snippets from "components/Snippets/Snippets";
+import Stack from "components/Stack/Stack";
+import { Outlet, ReactLocation, Router } from "react-location";
+export enum Firebase {
+  Stacks = "https://patriziocolomba-c5ef8.firebaseio.com/stacks.json",
+  Posts = "https://patriziocolomba-c5ef8.firebaseio.com/posts.json",
 }
 
-export default App;
+interface AppRoute {
+  itemId: string;
+  title: string;
+  path: string;
+  element: JSX.Element;
+}
+
+export const routes: AppRoute[] = [
+  { itemId: "repositories", title: "Repositories", path: "/", element: <Dashboard /> },
+  { itemId: "stack", title: "Stack", path: "/stack", element: <Stack /> },
+  { itemId: "snippets", title: "Code Snippets", path: "/snippets", element: <Snippets /> },
+];
+
+const location = new ReactLocation();
+export default function App() {
+  return (
+    <Router location={location} routes={routes}>
+      <AppProvider>
+        <Block backgroundImage="url(/assets/images/banner.jpg)" backgroundPosition="center" backgroundSize="cover" height="20em" />
+        <Block marginTop={"1em"}>
+          <Outlet />
+        </Block>
+      </AppProvider>
+    </Router>
+  );
+}

@@ -8,6 +8,7 @@ import { createHashHistory, Outlet, ReactLocation, Router } from "react-location
 export enum Firebase {
   Stacks = "https://patriziocolomba-c5ef8.firebaseio.com/stacks.json",
   Posts = "https://patriziocolomba-c5ef8.firebaseio.com/posts.json",
+  Snippets = "https://patriziocolomba-c5ef8.firebaseio.com/snippets.json",
 }
 
 interface AppRoute {

@@ -2,6 +2,7 @@ import { routes } from "App";
 import { ALIGN, HeaderNavigation, StyledNavigationItem as NavigationItem, StyledNavigationList as NavigationList } from "baseui/header-navigation";
 import ThemeSwitch from "components/ThemeSwitch/ThemeSwitch";
 import { Link } from "react-location";
+import useWindowSize from "components/useWindowSize";
 import { StyleObject } from "styletron-standard";
 
 const getInactiveProps = () => {

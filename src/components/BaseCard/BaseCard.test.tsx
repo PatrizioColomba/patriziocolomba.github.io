@@ -7,8 +7,8 @@ describe("<BaseCard />", () => {
   test("it should mount", () => {
     render(<BaseCard title="test" />);
 
-    const stackCard = screen.getByTestId("BaseCard");
+    const baseCard = screen.getByTestId("BaseCard");
 
-    expect(stackCard).toBeInTheDocument();
+    expect(baseCard).toBeInTheDocument();
   });
 });

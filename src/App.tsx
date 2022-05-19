@@ -2,7 +2,7 @@ import { Block } from "baseui/block";
 import { AppProvider } from "components/AppContext";
 import Dashboard from "components/Dashboard/Dashboard";
 import Snippets from "components/Snippets/Snippets";
-import Stack from "components/Stack/Stack";
+import Tags from "components/Tags/Tags";
 import TopNavigation from "components/TopNavigation/TopNavigation";
 import { createHashHistory, Outlet, ReactLocation, Router } from "react-location";
 export enum Firebase {
@@ -21,7 +21,7 @@ interface AppRoute {
 export const routes: AppRoute[] = [
   { itemId: "home", title: "Home", path: "/", element: <Dashboard /> },
   { itemId: "snippets", title: "Snippets", path: "/snippets", element: <Snippets /> },
-  { itemId: "tags", title: "Tags", path: "/stack", element: <Stack /> },
+  { itemId: "tags", title: "Tags", path: "/stack", element: <Tags /> },
   { itemId: "repositories", title: "Repositories", path: "/repositories", element: <Dashboard /> },
 ];
 

@@ -19,9 +19,10 @@ interface AppRoute {
 }
 
 export const routes: AppRoute[] = [
-  { itemId: "repositories", title: "Repositories", path: "/", element: <Dashboard /> },
-  { itemId: "stack", title: "Stack", path: "/stack", element: <Stack /> },
-  { itemId: "snippets", title: "Code Snippets", path: "/snippets", element: <Snippets /> },
+  { itemId: "home", title: "Home", path: "/", element: <Dashboard /> },
+  { itemId: "snippets", title: "Snippets", path: "/snippets", element: <Snippets /> },
+  { itemId: "tags", title: "Tags", path: "/stack", element: <Stack /> },
+  { itemId: "repositories", title: "Repositories", path: "/repositories", element: <Dashboard /> },
 ];
 
 const location = new ReactLocation({

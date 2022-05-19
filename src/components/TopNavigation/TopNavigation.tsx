@@ -2,7 +2,6 @@ import { routes } from "App";
 import { ALIGN, HeaderNavigation, StyledNavigationItem as NavigationItem, StyledNavigationList as NavigationList } from "baseui/header-navigation";
 import { HeadingXSmall } from "baseui/typography";
 import { themes } from "components/AppContext";
-import AppSearch from "components/AppSearch/AppSearch";
 import ThemeSwitch from "components/ThemeSwitch/ThemeSwitch";
 import useAppContext from "components/useAppContext";
 import useWindowSize from "components/useWindowSize";
@@ -36,37 +35,21 @@ export default function TopNavigation({ ...overrides }: StyleObject) {
 
   return (
     <HeaderNavigation overrides={{ Root: { style: { paddingRight: "24px", ...overrides } } }}>
-      <NavigationList $align={ALIGN.left}>
-        <NavigationItem>
-          <HeadingXSmall margin={0}>Patrizio Colomba on GitHub Pages</HeadingXSmall>
-        </NavigationItem>
+      <NavigationList $align={ALIGN.right}>
+        {routes.map((r) => (
+          <NavigationItem key={r.path}>
+            <Link to={r.path} getInactiveProps={getInactiveProps} getActiveProps={getActiveProps}>
+              {r.title}
+            </Link>
+          </NavigationItem>
+        ))}
       </NavigationList>
       <NavigationList $align={ALIGN.center} />
-      {size && size.width > themes[theme].breakpoints.medium + 100 ? (
-        <NavigationList $align={ALIGN.right}>
-          {routes.map((r) => (
-            <NavigationItem key={r.path}>
-              <Link to={r.path} getInactiveProps={getInactiveProps} getActiveProps={getActiveProps}>
-                {r.title}
-              </Link>
-            </NavigationItem>
-          ))}
-          {size && size.width > themes[theme].breakpoints.large ? (
-            <>
-              <NavigationItem>
-                <ThemeSwitch />
-              </NavigationItem>
-              <NavigationItem style={{ width: "200px" }}>
-                <AppSearch />
-              </NavigationItem>
-            </>
-          ) : (
-            ""
-          )}
-        </NavigationList>
-      ) : (
-        ""
-      )}
+      <NavigationList $align={ALIGN.right}>
+        <NavigationItem>
+          <ThemeSwitch />
+        </NavigationItem>
+      </NavigationList>
     </HeaderNavigation>
   );
 }

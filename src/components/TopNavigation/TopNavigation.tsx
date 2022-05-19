@@ -27,7 +27,7 @@ const getActiveProps = () => {
 /** A lot of literals in this component, need to revisit it */
 export default function TopNavigation({ ...overrides }: StyleObject) {
   return (
-    <HeaderNavigation overrides={{ Root: { style: { paddingRight: "24px", ...overrides } } }}>
+    <HeaderNavigation overrides={{ Root: { style: { ...overrides } } }}>
       <NavigationList $align={ALIGN.right}>
         {routes.map((r) => (
           <NavigationItem key={r.path}>
@@ -37,12 +37,16 @@ export default function TopNavigation({ ...overrides }: StyleObject) {
           </NavigationItem>
         ))}
       </NavigationList>
+      {useWindowSize().width > 640 && (
+        <>
       <NavigationList $align={ALIGN.center} />
       <NavigationList $align={ALIGN.right}>
         <NavigationItem>
           <ThemeSwitch />
         </NavigationItem>
       </NavigationList>
+        </>
+      )}
     </HeaderNavigation>
   );
 }

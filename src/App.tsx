@@ -32,7 +32,6 @@ export default function App() {
   return (
     <Router location={location} routes={routes}>
       <AppProvider>
-        <Block backgroundImage="url(/assets/images/banner.jpg)" backgroundPosition="center" backgroundSize="cover" height="20em" />
         <TopNavigation position="sticky" top={0} />
         <Block marginTop={"1em"}>
           <Outlet />

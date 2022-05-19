@@ -1,6 +1,6 @@
 import { Firebase } from "App";
 import { FlexGrid, FlexGridItem, FlexGridProps } from "baseui/flex-grid";
-import StackCard from "components/Stack/StackCard/StackCard";
+import BaseCard from "components/BaseCard/BaseCard";
 import { useFetch } from "components/useFetch";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ export default function Dashboard({ ...overrides }: Exclude<FlexGridProps, "just
     <FlexGrid justifyContent={"center"} display={"grid"} gridGap={"1em"} gridTemplateColumns={"repeat(auto-fit, 20em)"} {...overrides}>
       {cards.map((c) => (
         <FlexGridItem key={c.name}>
-          <StackCard
+          <BaseCard
             title={c.name}
             headerImage={{
               src: c.image,

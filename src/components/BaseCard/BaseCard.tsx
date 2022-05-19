@@ -5,7 +5,7 @@ import { Card, CardOverrides, StyledAction, StyledContents } from "baseui/card";
 import { PropsWithChildren } from "react";
 import { StyleObject } from "styletron-standard";
 
-interface StackCardProps {
+interface BaseCardProps {
   title?: React.ReactNode;
   headerImage?: string | React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> | undefined;
 }
@@ -20,7 +20,7 @@ const cardOverrides: CardOverrides = {
   },
 };
 
-export default function StackCard({ title, headerImage, children, ...overrides }: PropsWithChildren<StackCardProps> & StyleObject) {
+export default function BaseCard({ title, headerImage, children, ...overrides }: PropsWithChildren<BaseCardProps> & StyleObject) {
   return (
     <Card title={title} headerImage={headerImage} overrides={{ ...cardOverrides, Root: { style: overrides } }}>
       <StyledContents>

@@ -1,0 +1,12 @@
+on: [push, pull_request]
+
+jobs:
+  lint: 
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: action/checkout@v3
+    - uses: DavidAnson/markdown-lint-cli2-action@v11
+      with: 
+        globs: |
+          *.md
+          !test/*.md

@@ -12,7 +12,7 @@ interface SnippetsData {
 export default function Snippets() {
   const [snippets, setSnippets] = useState<SnippetsData[]>([]);
 
-  useFetch(Firebase.Snippets, []).then(setSnippets);
+  useFetch(Firebase.Snippets, []).then(setSnippets).catch(error => console.log(error));
 
   return (
     <div data-testid="Snippets">

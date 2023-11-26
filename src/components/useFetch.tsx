@@ -1,3 +1,4 @@
+import { Console } from "console";
 import { useEffect, useState } from "react";
 
 export function useFetch<T>(url: string, initialState: T): Promise<T> {
@@ -6,7 +7,8 @@ export function useFetch<T>(url: string, initialState: T): Promise<T> {
     useEffect(() => {
         fetch(url)
             .then(data => data.json())
-            .then(data => setResponse(Promise.resolve(data)));
+            .then(data => setResponse(Promise.resolve(data)))
+            .catch(error => console.log(error));
     }, [url]);
 
     return response;

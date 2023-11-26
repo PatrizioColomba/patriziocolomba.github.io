@@ -12,7 +12,7 @@ interface DashboardCard {
 export default function Dashboard({ ...overrides }: Exclude<FlexGridProps, "justifyContent" | "gridTemplateColumns" | "display" | "gridGap">) {
   const [cards, setCards] = useState<DashboardCard[]>([]);
 
-  useFetch<DashboardCard[]>(Firebase.Stacks, []).then(setCards);
+  useFetch<DashboardCard[]>(Firebase.Stacks, []).then(setCards).catch(error => console.log(error));
 
   return (
     <FlexGrid justifyContent={"center"} display={"grid"} gridGap={"1em"} gridTemplateColumns={"repeat(auto-fit, 20em)"} {...overrides}>

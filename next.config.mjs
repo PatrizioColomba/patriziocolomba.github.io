@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
  const nextConfig = {
    webpack: (config, { isServer }) => {
-     // Aggiungi le opzioni di watch
      config.watchOptions = {
-       poll: 1000, // Intervallo di polling in millisecondi
-       aggregateTimeout: 300, // Timeout di aggregazione
+       poll: 1000, 
+       aggregateTimeout: 300,
      };
 
      return config;

@@ -7,4 +7,4 @@
  EXPOSE 3000
 
  # Comando di default
- CMD npm install && npm start
+ CMD npm install && npm run dev

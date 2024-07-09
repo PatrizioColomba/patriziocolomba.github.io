@@ -12,7 +12,6 @@ jobs:
         run: |
           npm install
           npm run build
-          touch out/.nojekyll
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:

@@ -8,6 +8,9 @@ interface AppThemeProps {
 
 export default function AppTheme({children}: AppThemeProps) {
     const theme = createTheme({
+        typography: {
+            fontFamily: 'Space Mono, Roboto'
+        },
         palette: {
             mode: 'dark'
         }

@@ -1,6 +1,6 @@
-FROM node:23.3.0-alpine3.19
+FROM node:23.3.0-bookworm-slim
 
-RUN apk update && apk add git openssh
+RUN apt update && apt install -y git openssh-client
 
 RUN git config --global core.autocrlf input
 

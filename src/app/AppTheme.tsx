@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import { createTheme, CssBaseline } from "@mui/material";
+import { createTheme, CssBaseline, useMediaQuery } from "@mui/material";
 import React from "react";
 
 interface AppThemeProps {
@@ -7,12 +7,14 @@ interface AppThemeProps {
 }
 
 export default function AppTheme({children}: AppThemeProps) {
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
     const theme = createTheme({
         typography: {
             fontFamily: 'Space Mono, Roboto'
         },
         palette: {
-            mode: 'dark'
+            mode: prefersDarkMode ? 'dark' : 'light'
         }
     })
 

@@ -1,6 +1,6 @@
 FROM node:23.3.0-alpine3.19
 
-RUN apt update && apt install -y git openssh-client
+RUN apk update && apk add --no-cache git openssh
 
 RUN git config --global core.autocrlf input
 
@@ -11,4 +11,4 @@ RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
     eval "$(ssh-agent -s)"
 
-CMD npm install && npm run dev
+CMD ["sh", "-c", "npm install && npm run dev"]

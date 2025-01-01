@@ -18,7 +18,7 @@ export default function Home() {
   }
 
   return (<AppTheme><main><Grid2 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-    { data.map(item => (<Typography>{item.data}</Typography>))}
+    { data.map((item, index) => (<Typography key={index}>{item.data}</Typography>))}
   </Grid2></main></AppTheme>);
 }
 

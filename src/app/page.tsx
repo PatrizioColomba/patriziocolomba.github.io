@@ -3,12 +3,18 @@
 import { Grid2, Typography } from "@mui/material";
 import AppTheme from "./AppTheme";
 import { useEffect, useState } from "react";
+import CircularIndeterminate from "./CircularIndeterminate";
+import ErrorMessage from "./ErrorMessage";
 
 export default function Home() {
   const [data, setData] = useState<Data[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    GetTest().then(setData).catch(console.error);
+    error && setError(null);
+    setIsLoading(true);
+    GetTest().then(setData).catch(setError).finally(() => setIsLoading(false));
   }, []);
 
   async function GetTest(): Promise<Data[]> {
@@ -18,7 +24,9 @@ export default function Home() {
   }
 
   return (<AppTheme><main><Grid2 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-    { data.map((item, index) => (<Typography key={index}>{item.data}</Typography>))}
+    {isLoading && <CircularIndeterminate />}
+    {!isLoading && !error && data.map((item, index) => (<Typography key={index}>{item.data}</Typography>))}
+    {!isLoading && error && ErrorMessage(error.message)}
   </Grid2></main></AppTheme>);
 }
 

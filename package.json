@@ -12,9 +12,10 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^6.4.8",
+    "@mui/icons-material": "^6.4.7",
     "@fontsource/space-mono": "^5.2.5",
     "@fontsource/roboto": "^5.2.5",
+    "@mui/icons-material": "^6.4.6",
     "next": "14.2.26",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"

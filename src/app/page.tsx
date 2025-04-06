@@ -18,9 +18,13 @@ export default function Home() {
   }, []);
 
   async function GetTest(): Promise<Data[]> {
-    const response = await fetch('https://patriziocolomba-web-app.azurewebsites.net/Test');
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+    if (!backendUrl) {
+      throw new Error("Something went wrong. Please try again later.");
+    }
+    const response = await fetch(`${backendUrl}/Test`);
     const data = await response.json();
-    return data
+    return data;
   }
 
   return (<AppTheme><main><Grid2 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>

@@ -9,8 +9,8 @@ export default function CommitHash() {
     <Box
       sx={{
         position: 'fixed',
-        bottom: 16,
-        left: 16,
+        top: 16,
+        right: 16,
         zIndex: 1000,
       }}
     >

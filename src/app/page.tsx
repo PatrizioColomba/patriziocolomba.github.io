@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import CircularIndeterminate from "./CircularIndeterminate";
 import ErrorMessage from "./ErrorMessage";
 import PgpLink from "./PgpLink";
-import CommitHash from "./CommitHash";
 
 export default function Home() {
   const [data, setData] = useState<Data[]>([]);
@@ -33,7 +32,7 @@ export default function Home() {
     {isLoading && <CircularIndeterminate />}
     {!isLoading && !error && data.map((item, index) => (<Typography key={index}>{item.data}</Typography>))}
     {!isLoading && error && ErrorMessage(error.message)}
-  </Grid2><CommitHash /><PgpLink /></main></AppTheme>);
+  </Grid2><PgpLink /></main></AppTheme>);
 }
 
 type Data = {

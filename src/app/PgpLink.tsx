@@ -1,16 +1,21 @@
 'use client'
 
-import { Box, Link, Tooltip } from "@mui/material";
+import { Box, Link, Tooltip, Typography } from "@mui/material";
 import KeyIcon from '@mui/icons-material/Key';
 
 export default function PgpLink() {
+  const commitHash = process.env.NEXT_PUBLIC_COMMIT_HASH || 'unknown';
+  
   return (
     <Box
       sx={{
         position: 'fixed',
         bottom: 16,
-        right: 16,
+        left: 16,
         zIndex: 1000,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 2,
       }}
     >
       <Tooltip title="PGP Signature" arrow>
@@ -32,6 +37,33 @@ export default function PgpLink() {
           <KeyIcon fontSize="small" />
         </Link>
       </Tooltip>
+      
+      <Link
+        href={`https://github.com/PatrizioColomba/patriziocolomba.github.io/commit/${commitHash}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          textDecoration: 'none',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'text.secondary',
+            opacity: 0.5,
+            transition: 'opacity 0.2s',
+            fontFamily: 'Space Mono, monospace',
+            fontSize: '0.7rem',
+            '&:hover': {
+              opacity: 1,
+            },
+          }}
+        >
+          {commitHash}
+        </Typography>
+      </Link>
     </Box>
   );
 }

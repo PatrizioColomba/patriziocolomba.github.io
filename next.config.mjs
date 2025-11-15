@@ -1,17 +1,9 @@
-import { execSync } from 'child_process';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   env: {
-    NEXT_PUBLIC_COMMIT_HASH: (() => {
-      try {
-        return execSync('git rev-parse --short HEAD').toString().trim();
-      } catch (error) {
-        return 'unknown';
-      }
-    })(),
+    NEXT_PUBLIC_COMMIT_HASH: process.env.NEXT_PUBLIC_COMMIT_HASH || 'unknown',
   },
   webpack: (config, { isServer }) => {
     config.watchOptions = {

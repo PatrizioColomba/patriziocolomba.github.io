@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import CircularIndeterminate from "./CircularIndeterminate";
 import ErrorMessage from "./ErrorMessage";
 import PgpLink from "./PgpLink";
+import { callMCPTool } from "./mcpClient";
 
 export default function Home() {
   const [data, setData] = useState<Data[]>([]);
@@ -15,8 +16,18 @@ export default function Home() {
   useEffect(() => {
     error && setError(null);
     setIsLoading(true);
-    GetTest().then(setData).catch(setError).finally(() => setIsLoading(false));
+    GetTestMCP().then(setData).catch(setError).finally(() => setIsLoading(false));
   }, []);
+
+  async function GetTestMCP(): Promise<Data[]> {
+    try {
+      const result = await callMCPTool('say_hello', {});
+      return [{ data: result.result?.content?.[0]?.text || JSON.stringify(result, null, 2) }];
+    } catch (mcpError) {
+      console.warn('MCP server not reachable, falling back to backend:', mcpError);
+      return await GetTest();
+    }
+  }
 
   async function GetTest(): Promise<Data[]> {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;

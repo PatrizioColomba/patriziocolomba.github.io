@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import CircularIndeterminate from "./CircularIndeterminate";
 import ErrorMessage from "./ErrorMessage";
 import PgpLink from "./PgpLink";
-import { callMCPTool } from "./mcpClient";
+
 
 export default function Home() {
   const [data, setData] = useState<Data[]>([]);
@@ -20,11 +20,19 @@ export default function Home() {
   }, []);
 
   async function GetTestMCP(): Promise<Data[]> {
+    const mcp_url = process.env.NEXT_PUBLIC_MCP_URL;
+    if (!mcp_url) {
+      console.warn('MCP URL not configured, trying backend');
+      return await GetTest();
+    }
     try {
-      const result = await callMCPTool('say_hello', {});
-      return [{ data: result.result?.content?.[0]?.text || JSON.stringify(result, null, 2) }];
+      const endpoint = `${mcp_url}/api/say_hello`;
+      const response = await fetch(endpoint);
+      if (!response.ok) throw new Error("Failed to fetch from MCP server");
+      const result = await response.json();
+      return [{ data: result.message }];
     } catch (mcpError) {
-      console.warn('MCP server not reachable, falling back to backend:', mcpError);
+      console.warn('MCP server not reachable, trying backend:', mcpError);
       return await GetTest();
     }
   }
@@ -32,11 +40,16 @@ export default function Home() {
   async function GetTest(): Promise<Data[]> {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
     if (!backendUrl) {
-      throw new Error("Something went wrong. Please try again later.");
+      throw new Error("BACKEND URL not configured. Please contact the administrator.");
     }
-    const response = await fetch(`${backendUrl}/Test`);
-    const data = await response.json();
-    return data;
+    try {
+      const response = await fetch(`${backendUrl}/Test`);
+      if (!response.ok) throw new Error("Error retrieving data from backend");
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      throw new Error("Unable to contact MCP or backend.");
+    }
   }
 
   return (<AppTheme><main><Grid2 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>

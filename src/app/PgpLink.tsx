@@ -20,7 +20,7 @@ export default function PgpLink() {
     >
       <Tooltip title="PGP Signature" arrow>
         <Link
-          href="https://keys.openpgp.org/vks/v1/by-fingerprint/248097092B458509C508DAC0350585C4E9518F26"
+          href="https://keys.openpgp.org/vks/v1/by-fingerprint/F9871C4314D9984D3C380E74816B0FC9E00CFF2E"
           target="_blank"
           rel="noopener noreferrer"
           sx={{

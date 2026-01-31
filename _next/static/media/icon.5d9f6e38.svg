@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #000; }
+      .fg { fill: #fff; }
+    }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #fff; }
+      .fg { fill: #000; }
+    }
+  </style>
+  <!-- Sfondo arrotondato -->
+  <rect class="bg" width="64" height="64" rx="12"/>
+  <!-- Lambda centrata -->
+  <text class="fg" x="32" y="44" font-size="40" font-family="monospace" text-anchor="middle">λ</text>
+</svg>
+

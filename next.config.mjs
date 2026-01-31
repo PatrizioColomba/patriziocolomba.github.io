@@ -5,6 +5,7 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_COMMIT_HASH: process.env.NEXT_PUBLIC_COMMIT_HASH || 'unknown',
   },
+  turbopack: {},
   webpack: (config, { isServer }) => {
     config.watchOptions = {
       poll: 1000, 

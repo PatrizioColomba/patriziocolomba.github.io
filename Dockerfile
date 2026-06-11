@@ -1,4 +1,4 @@
-FROM node:25.2.1-alpine3.21
+FROM node:25.9.0-trixie-slim
 
 RUN apk update && apk add --no-cache git openssh
 

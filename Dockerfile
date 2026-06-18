@@ -1,6 +1,6 @@
 FROM node:25.9.0-trixie-slim
 
-RUN apk update && apk add --no-cache git openssh
+RUN apt-get update && apt-get install -y git openssh-client && rm -rf /var/lib/apt/lists/*
 
 RUN git config --global core.autocrlf input
 
